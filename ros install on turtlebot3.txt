@@ -1,0 +1,16 @@
+1.
+sudo apt update && sudo apt install curl gnupg2 lsb-release
+
+2.电脑上先下载ros.asc
+https://raw.githubusercontent.com/ros/rosdistro/master/ros.asc
+
+3.把ros.asc拷贝到turtlebot3上
+scp ros.asc ubuntu@192.168.31.185:/home/ubuntu/
+
+4.添加秘钥
+sudo apt-key add ros.asc
+
+5.更换清华源
+sudo sh -c 'echo "deb http://mirror.tuna.tsinghua.edu.cn/ros2/ubuntu `lsb_release -cs` main" > /etc/apt/sources.list.d/ros2-latest.list'
+
+
