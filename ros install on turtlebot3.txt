@@ -14,8 +14,15 @@ sudo apt-key add ros.asc
 sudo sh -c 'echo "deb http://mirror.tuna.tsinghua.edu.cn/ros2/ubuntu `lsb_release -cs` main" > /etc/apt/sources.list.d/ros2-latest.list'
 
 6.修改git 代理
+
 git config --global http.proxy 'socks5://127.0.0.1:1080'
 git config --global https.proxy 'socks5://127.0.0.1:1080'
 取消指令是：
 git config --global --unset http.proxy
 git config --global --unset https.proxy
+运行上面的指令貌似没有作用的话，用下面这个：
+
+#只对github.com
+git config --global http.https://github.com.proxy socks5://127.0.0.1:1080
+#取消代理
+git config --global --unset http.https://github.com.proxy
